@@ -1,0 +1,69 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<!-- AIzaSyA5I5_VxbNz8BGtTbNwAQj5WuFmS6huoWE -->
+{%  load static %}
+
+{% comment %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+<script src="{% static 'index.js' %}"></script> {% endcomment %}
+
+<div class="container">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-success" type="submit" value="Upload">
+  </form>
+  <div class="row">
+    <div class="col">
+    </div>
+    {% comment %} <div class="col">
+      <form action="{}" method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger " type="button" value="Exportssss">
+      </form>
+    </div> {% endcomment %}
+  </div>
+  <hr>
+  <table class="table table-light table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>NameTest</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- jinja2 Technique -->
+      {% if befor_tables %}
+      {% for befor_table in befor_tables %}
+      <tr>
+        <td>{{befor_table.index}}</td>
+        <td>{{befor_table.NameTest}}</td>
+        <td>{{befor_table.Name}}</td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+
+
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Matching Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- jinja2 Technique -->
+          {% if after_tables %}
+          {% for after_table in after_tables %}
+          <tr>
+            <td>{{after_table.index}}</td>
+            <td>{{after_table.Matching}}</td>
+            <td>{{after_table.Score}}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+
+          {% endblock %}
