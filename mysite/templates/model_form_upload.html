@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3 text-right">
+      <div class="d-flex justify-content-between">
+        <a class="btn ml-3" href="/upload">Back</a>
+        <a class="btn btn-primary mr-3" href="/">Export</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Table befor data.</h5>
+            <div class="table-responsive-md">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>NameTest</th>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- jinja2 Technique -->
+                  {% if befor_tables %}
+                  {% for befor_table in befor_tables %}
+                  <tr>
+                    <td>{{befor_table.index}}</td>
+                    <td>{{befor_table.NameTest}}</td>
+                    <td>{{befor_table.Name}}</td>
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Table after data.</h5>
+            <div class="table-responsive-md">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Matching Name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- jinja2 Technique -->
+                  {% if after_tables %}
+                  {% for after_table in after_tables %}
+                  <tr>
+                    <td>{{after_table.index}}</td>
+                    <td>{{after_table.Matching}}</td>
+                    <td>{{after_table.Score}}</td>
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

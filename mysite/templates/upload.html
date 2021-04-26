@@ -1,0 +1,21 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mx-auto" style="width: 50%;">
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-success" type="submit" value="Upload">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
