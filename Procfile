@@ -1,1 +1,2 @@
-web: gunicorn mysite.wsgi
+web: gunicorn mysite.wsgi 
+release: python manage.py migrate --no-input
