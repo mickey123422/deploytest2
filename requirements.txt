@@ -115,7 +115,7 @@ tornado==6.1
 traitlets==5.0.5
 uritemplate==3.0.1
 urllib3==1.25.8
-values==0.0.0
+
 virtualenv==20.0.10
 virtualenv-clone==0.5.4
 virtualenvwrapper-win==1.2.6
