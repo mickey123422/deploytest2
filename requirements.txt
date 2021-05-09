@@ -90,7 +90,6 @@ Pygments==2.8.1
 pylint==2.8.1
 pylint-django==2.4.3
 pylint-plugin-utils==0.6
-pypiwin32==223
 Pyrebase4==4.4.1
 python-dateutil==2.8.1
 python-jwt==2.0.1
