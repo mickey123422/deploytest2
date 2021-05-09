@@ -6,7 +6,7 @@
     <div class="col-12 my-3 text-right">
       <div class="d-flex justify-content-between">
         <a class="btn ml-3" href="/upload">Back</a>
-
+        <a class="btn btn-primary mr-3" href="/">Export</a>
       </div>
     </div>
   </div>
@@ -21,8 +21,8 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>NameTest</th>
-                    <th>Name</th>
+                    <th>NameTest (Master)</th>
+                    <th>Name (Input)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,6 +53,7 @@
                   <tr>
                     <th>#</th>
                     <th>Matching Name</th>
+                    <th>Name (Input)</th>
                     <th>Score</th>
                   </tr>
                 </thead>
@@ -63,7 +64,9 @@
                   <tr>
                     <td>{{after_table.index}}</td>
                     <td>{{after_table.Matching}}</td>
+                    <td>{{after_table.Name}}</td>
                     <td>{{after_table.Score}}</td>
+
                   </tr>
                   {% endfor %}
                   {% endif %}
