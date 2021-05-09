@@ -57,7 +57,7 @@ def tojson(dataFrame):
 def fuzzy(excel, percent_number):
     df = pd.DataFrame(excel)
     NameTests = [name for name in df["NameTest"] if isinstance(name, str)]
-    data = {"Matching": [], "Score": []}
+    data = {"Matching": [], "Score": [], "Name": []}
     for Name in df["Name"]:
         if isinstance(Name, str):
             match = process.extractOne(
@@ -66,6 +66,7 @@ def fuzzy(excel, percent_number):
         if match:
             data["Matching"].append(match[0])
             data["Score"].append(match[1])
+            data["Name"].append(Name)
     df1 = pd.DataFrame(data)
     return df1
 
