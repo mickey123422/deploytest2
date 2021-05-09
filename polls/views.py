@@ -37,7 +37,7 @@ def touploads(request):
 
 def getexcel(pk):
     Doc = Document.objects.get(id=pk)
-    filePath = "http://127.0.0.1:8000" + Doc.document.url
+    filePath = "https://vast-springs-60790.herokuapp.com" + Doc.document.url
     link = urllib.request.urlopen(filePath).read()
     excel = pd.read_excel(link)
     return excel
